@@ -18,10 +18,8 @@ export const setDogs = dogs => ({
   curry: set(dogs),
 });
 
-export const getDogs = () => dispatch => {
-  console.log(`dispatch`);
-  return axios
+export const getDogs = () => dispatch =>
+  axios
     .get(DOG_URL)
     .then(x => console.log(`x`, x) || setDogs(x.data.message))
     .then(dispatch);
-};

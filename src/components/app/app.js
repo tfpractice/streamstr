@@ -8,7 +8,6 @@ import "./app.css";
 import logo from "./logo.svg";
 import { getDogs } from "../../store/dogs/actions";
 
-console.log(`getDogs`, getDogs);
 const App = props => (
   <Grid container justify="center" alignContent="center" alignItems="center">
     <Grid item xs={11}>
