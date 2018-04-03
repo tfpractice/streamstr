@@ -1,8 +1,8 @@
-import { applyMiddleware as applyMid, createStore } from 'redux';
-import { createLogger } from 'redux-logger';
-import thunk from 'redux-thunk';
+import thunk from "redux-thunk";
+import { applyMiddleware as applyMid, createStore } from "redux";
+import { createLogger } from "redux-logger";
 
-import rootR from './reducer';
+import rootR from "./reducer";
 
 const predicate = () => true;
 

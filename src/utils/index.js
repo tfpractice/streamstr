@@ -1,5 +1,6 @@
-import * as Worker from './registerServiceWorker';
+import * as Request from "./request";
+import * as Worker from "./registerServiceWorker";
 
-export { default as Theme } from './theme';
+export { default as Theme } from "./theme";
 
-export { Worker };
+export { Worker, Request };

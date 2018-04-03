@@ -1,10 +1,8 @@
-import { combineReducers } from 'redux';
-import { reducer as form } from 'redux-form';
+import { combineReducers } from "redux";
+import { reducer as form } from "redux-form";
 
-//
-// import { reducer as clock } from './clock';
-// import { reducer as timer } from './timer';
+import { reducer as dogs } from "./dogs";
 
 const basic = (state = [], action) => state;
 
-export default combineReducers({ basic, form });
+export default combineReducers({ dogs });

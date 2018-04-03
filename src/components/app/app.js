@@ -1,10 +1,15 @@
-import Grid from 'material-ui/Grid';
-import React from 'react';
+import Button from "material-ui/Button";
+import Grid from "material-ui/Grid";
+import React from "react";
+import { connect } from "react-redux";
 
-import logo from './logo.svg';
-import './app.css';
+import "./app.css";
 
-const App = () => (
+import logo from "./logo.svg";
+import { getDogs } from "../../store/dogs/actions";
+
+console.log(`getDogs`, getDogs);
+const App = props => (
   <Grid container justify="center" alignContent="center" alignItems="center">
     <Grid item xs={11}>
       <Grid
@@ -21,11 +26,17 @@ const App = () => (
             <p className="App-intro">
               To get started, edit <code>src/App.js</code> and save to reload.
             </p>
-          </div>{' '}
+          </div>
+          {` `}
+          <Button onClick={props.getDogs}>getDogs</Button>
         </Grid>
       </Grid>
     </Grid>
   </Grid>
 );
 
-export default App;
+const mapState = ({ dogs: { data: dogs }}) => ({ dogs });
+
+const connected = connect(mapState, { getDogs });
+
+export default connected(App);
