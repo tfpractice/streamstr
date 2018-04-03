@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
     "material-ui": "^1.0.0-beta.40",
     "material-ui-icons": "^1.0.0-beta.36",
     "react": "^16.3.0",
@@ -18,11 +21,14 @@
     "redux-thunk": "^2.2.0",
     "rxjs": "^5.5.8"
   },
+  "proxy": "http://localhost:4000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon --exec babel-node --presets=env -- src/server",
+    "cc": "concurrently \"yarn server\" \"yarn start\""
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
